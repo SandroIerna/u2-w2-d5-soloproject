@@ -7,12 +7,12 @@ const mediaRouter = express.Router();
 
 /* --------------------------- GET SINGLE --------------------------- */
 
-mediaRouter.get("/:mediaID", async (req, res, next) => {
+mediaRouter.get("/:mediaId", async (req, res, next) => {
   try {
     const mediaArray = await getMedia();
-    const mediaId = req.params.mediaID;
+    const mediaId = req.params.mediaId;
     const media = mediaArray.find((media) => media._id === mediaId);
-    res.send(product);
+    res.send(media);
   } catch (error) {
     next(error);
   }
